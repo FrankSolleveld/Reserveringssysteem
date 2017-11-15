@@ -5,8 +5,17 @@
  * Date: 15-11-17
  * Time: 15:23
  */?>
+<link rel="stylesheet" type="text/css" src="../content-styles.css"/>
 
+<div class="mainframe container">
 
-<p>Als je dit leest, dan heb je iets gaafs gemaakt.</p>
+    <h1>Reserveringspanel</h1>
+
+    <h3>Wat wilt u reserveren?</h3>
+    <div class="leftPanel container">
+
+    </div>
+
+</div>
 
 
