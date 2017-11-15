@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
 
-html { background:#333333;   background: url(blurred.jpg) no-repeat center center fixed;
+html { background:#333333;   background: url('media/blurred.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -19,37 +19,6 @@ body {  margin:0; padding:0; }
 
 header { width:400px; height:140px; background:white; position:absolute; margin:auto 0 auto; margin-top:100px;  box-shadow: 0px 5px 15px -10px rgba(0,0,0,0.5);  z-index:900;  }
 #headerBackground { position:fixed; width:100%; background-color:white; height:70px;  /*box-shadow: 0px 5px 15px -10px black;*/ opacity:100; /*border-bottom:1px solid #d5d5d5;*/ z-index:20; top:0; left:0; }
-#support { font-weight:300;   text-decoration:none; font-family: 'Open Sans', sans-serif; font-size:25px; box-shadow: 0px 5px 15px -8px black;  transition: background-color 0.1s ease;  width:310px;
-
-    background: #0099d9;
-    color: white;
-    padding: 1.2em;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
-
-
-}
-#support:hover { background:white; color:#0099d9;; }
-
-.submenu { position:absolute; top:70px; background:#e6e6e6; left:0px;  width:1180px; height:360px; z-index:-1; display:none; box-shadow: 0px 5px 15px -13px black; padding:0px; font-size:13px; font-style:italic; }
-
-.menu:first-child { margin-left:290px;}
-
-/*#content {  padding:645px 10px 40px 10px; width:100%;  }*/
-
-#slider { height:550px; width:100%; overflow:hidden; display:block; position:absolute; z-index:0; min-width:1180px; /*box-shadow: 0px 5px 15px -10px black; */ z-index:10;}
-#video { width:100%; min-height:550px;  }
 
 
 

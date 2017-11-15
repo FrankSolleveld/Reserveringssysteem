@@ -1,15 +1,6 @@
 <?php
-include __DIR__ . '../app/views/header.php';
-include __DIR__ . '../app/views/footer.php';
+include '../app/src/database.php';
 ?>
-/**
- * Created by PhpStorm.
- * User: franksolleveld
- * Date: 15-11-17
- * Time: 15:02
- */
-
-
 
 <head>
 
@@ -28,7 +19,9 @@ include __DIR__ . '../app/views/footer.php';
 	<link rel="stylesheet" href="../app/main.css">
 
 	<!-- Javascripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 </head>
 
@@ -38,14 +31,11 @@ include __DIR__ . '../app/views/footer.php';
 
 
 
-
-
-
-
-
-
-
-
+<?php
+include '../app/views/header.php';
+include '../app/views/content.php';
+include '../app/views/footer.php';
+?>
 </body>
 
 </html>
