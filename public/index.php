@@ -26,11 +26,6 @@ include '../app/src/database.php';
 </head>
 
 <body>
-
-
-
-
-
 <?php
 include '../app/views/header.php';
 include '../app/views/content.php';
