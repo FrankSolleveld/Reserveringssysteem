@@ -4,3 +4,8 @@
 - public, app, views etc
 - Concepten staan op de iPad en XD-project staat op Mac. 
 - Doel: Ga nu bouwen.
+
+28 november 2017:
+- CSS fix
+- Structuur opgelost
+- Concepten is af en ga komende week verder bouwen.
