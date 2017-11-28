@@ -17,6 +17,7 @@ require_once '../app/src/database.php';
 
 	<!-- CSS files -->
 	<link rel="stylesheet" href="../app/main.css">
+    <link rel="stylesheet" href="../app/content-styles.css">
 
 	<!-- Javascripts -->
     <!-- Javascripts -->

@@ -8,7 +8,7 @@
 
 $values = $_POST;
 
-/**if(isset($_POST))
+/**if(isset($_POST['submit']))
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,16 +18,12 @@ $values = $_POST;
 }*/
 
 ?>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" src="../app/content-styles.css"/>
-</head>
-<body>
+<div id="viewport">
+
 <div class="mainframe">
 
-    <h1>Reserveringspanel</h1>
+    <h3>Wat wilt u reserveren?</h3><br>
 
-    <h3>Wat wilt u reserveren?</h3>
     <div class="leftPanel ">
         <p>lorem ipsum dolor sit amet</p>
         <form method="post" >
@@ -36,7 +32,7 @@ $values = $_POST;
             <button type="submit">Verzenden</button>
         </form>
     </div>
-
+    </div>
 </div>
-</body>
-</html>
+</div>
+
