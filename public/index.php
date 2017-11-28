@@ -1,5 +1,5 @@
 <?php
-include '../app/src/database.php';
+require_once '../app/src/database.php';
 ?>
 
 <head>
@@ -26,11 +26,6 @@ include '../app/src/database.php';
 </head>
 
 <body>
-
-
-
-
-
 <?php
 include '../app/views/header.php';
 include '../app/views/content.php';
