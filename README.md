@@ -9,3 +9,4 @@
 - CSS fix
 - Structuur opgelost
 - Concepten is af en ga komende week verder bouwen.
+- Scrolling uitgezet

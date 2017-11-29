@@ -19,11 +19,12 @@ body {
 
 .mainframe {
     background: white;
-    width: 60%;
+    width: 30%;
     padding: 20px;
     flex-direction: row;
-    display: flex; /* Ik gebruik flexbox omdat dat gemakkelijk is om mee te stylen. */
-    flex-wrap: wrap;
+    display: flex;
+
+    justify-content: center;
 }
 
 .leftPanel {
@@ -33,27 +34,19 @@ body {
     width: 50%;
     padding: 20px;
 }
-.h3Class {
-    width:100%;
-}
 
 ul {
     list-style-type:none
 }
 
-.rightPanel {
-
-    background: #212121;
-    color: white;
-    width: 50%;
-    padding: 20px;
-    
-}
-
 input {
-    height:30px;
+    height: 50px;
+    width:350px;
+    background-color: lightgray;
+    text-decoration-color: black;
 }
+ img {
+     max-width: 100px;
+     max-height:100px;
 
-#email-field {
-    width:355px;
-}
+ }
