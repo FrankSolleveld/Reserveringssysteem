@@ -8,45 +8,78 @@ body {
     overflow: hidden;
 }
 
-#viewport {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    resize: both;
-    overflow: auto;
+.main-wrapper {
+    margin:0 auto;
+    width:1000px;
 }
 
-.mainframe {
-    background: white;
-    width: 30%;
-    padding: 20px;
-    flex-direction: row;
-    display: flex;
-
-    justify-content: center;
+a {
+    text-decoration: none; /* Geen onderlijnen */
 }
 
-.leftPanel {
-
-    background: #212121;
-    color: white;
-    width: 50%;
-    padding: 20px;
+header nav {
+    width:100%;
+    height:80px;
+    background-color: #222222;
 }
 
-ul {
-    list-style-type:none
+header nav ul {
+    float: left;
 }
 
-input {
-    height: 50px;
-    width:350px;
-    background-color: lightgray;
-    text-decoration-color: black;
+header nav ul li {
+    float: left;
+    list-style: none; /* Geen bullet points */
 }
- img {
-     max-width: 100px;
-     max-height:100px;
 
- }
+header nav ul li a {
+    font-size: 16px;
+    color: #111;
+    line-height:63px;
+}
+
+header .nav-login {
+    float: right;
+}
+
+header .nav-login form{
+    float: left;
+    padding-top:15px;
+}
+
+header .nav-login form input {
+    float: left;
+    width:140px;
+    height:30px;
+    padding:0px 10px;
+    margin-right:10px;
+    border:none;
+    background-color: #ccc;
+    line-height:30px;
+}
+
+header .nav-login form button {
+    float: left;
+    width:60px;
+    height:30px;
+    margin-right:10px;
+    border:none;
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+
+header .nav-login form button {
+    background-color: #ccc;
+}
+
+header .nav-login a {
+    display: block;
+    width:60px;
+    height:60px;
+    border:none;
+    background-color: white;
+    font-size: 16px;
+    color: #111;
+    line-height:63px;
+    cursor: pointer;
+}

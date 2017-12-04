@@ -10,3 +10,8 @@
 - Structuur opgelost
 - Concepten is af en ga komende week verder bouwen.
 - Scrolling uitgezet
+
+29 november 2017:
+- CSS Flexbox: Centered!
+- Added more semantic elements;
+- Added more <input> elements;
