@@ -1,14 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franksolleveld
- * Date: 15-11-17
- * Time: 16:26
- */
-/**$db = new mysqli('sql.hosted.hr.nl', '0940599', 'QXiCtoPN8', '0940599');
 
-if($db->connect_errno > 0){
-    die('Unable to connect to database [' . $db->connect_error . ']');
-} else {
-    echo("Connectie gelukt");
-}*/
+
+$user = 'root';
+$password = 'root';
+$db = 'loginsystem';
+$host = 'localhost';
+$port = 8889;
+
+$link = mysqli_init();
+$success = mysqli_real_connect(
+    $link,
+    $host,
+    $user,
+    $password,
+    $db,
+    $port
+);

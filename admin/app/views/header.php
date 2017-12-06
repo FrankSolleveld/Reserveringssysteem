@@ -1,13 +1,30 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: franksolleveld
- * Date: 15-11-17
- * Time: 15:14
- */
+
+
 ?>
 
-<div id="headerBackground">
-    <div onclick="parent.location.href='http://www.compleet.it/'" id="logo1"></div><div onclick="parent.location.href='http://www.compleet.it/'" id="logo2"></div><div onclick="parent.location.href='http://www.compleet.it/'" id="logo3"></div>
-    <div onclick="parent.location.href='http://www.compleet.it/'" id="titel">Compleet IT</div>
-</div>
+
+
+<header>
+    <nav>
+        <div class="main-wrapper">
+
+            <ul>
+                <li> <a href="index.php">Home</a></li>
+            </ul>
+
+            <div class="nav-login">
+
+                <form>
+                    <input type="text" name="uid" placeholder="Gebruikersnaam / E-mail">
+                    <input type="password" name="pwd" placeholder="Wachtwoord">
+
+                    <button type="submit" name="submit">Log in</button>
+                </form>
+
+            </div>
+
+        </div>
+    </nav>
+</header>

@@ -15,3 +15,7 @@
 - CSS Flexbox: Centered!
 - Added more semantic elements;
 - Added more <input> elements;
+
+6 december 2017:
+- Registering for the site now works and the data is being storen on de database.
+- The edited page is especially save.php and the admin page.

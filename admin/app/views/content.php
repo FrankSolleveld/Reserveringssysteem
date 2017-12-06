@@ -18,29 +18,12 @@ $values = $_POST;
 }*/
 
 ?>
-<!-- Header waar login komt te staan -->
-<header>
-    <nav>
-        <div class="main-wrapper">
 
-            <ul>
-                <li> <a href="index.php">Home</a></li>
-            </ul>
-
-            <div class="nav-login">
-
-                <form>
-                    <input type="text" name="uid" placeholder="Gebruikersnaam / E-mail">
-                    <input type="password" name="pwd" placeholder="Wachtwoord">
-
-                    <button type="submit" name="submit">Log in</button>
-                </form>
-                <a href="signup.php">Registreren</a>
-            </div>
-
-        </div>
-    </nav>
-</header>
+<section class="main-container">
+    <div class="main-wrapper">
+        <h2>Home</h2>
+    </div>
+</section>
 <div id="viewport">
 
 

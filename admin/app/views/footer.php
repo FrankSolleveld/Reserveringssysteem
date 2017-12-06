@@ -14,3 +14,5 @@
     <a id="phone" href="tel:0717107402">071 -&shy; 710 74 02</a>
     <a id="email" href="http://www.compleetit.nl" target="_parent">info@compleetit.nl</a>
 </div>
+
+</body>
