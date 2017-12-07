@@ -1,6 +1,6 @@
 <?php
 
-require_once "../src/database.php";
+require_once "database.php";
 // data uit form ophalen
 if(isset($_POST['submit'])) {
 
@@ -41,7 +41,8 @@ if(isset($_POST['submit'])) {
                 $result = mysqli_query($link, $sql);
                 $resultCheck = mysqli_num_rows($result);
 
-                if($resultCheck > 0) {
+                // Als username == admin --> user taken. Men mag geen admin heten in mijn optiek.
+                if($resultCheck > 0 || $uid == "admin") {
                     header('Location: ../../public/index.php?signup=usertaken');
                     exit();
                 } else {

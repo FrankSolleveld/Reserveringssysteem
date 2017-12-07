@@ -19,7 +19,7 @@ include_once "footer.php";
     <div class="main-wrapper">
         <h2>Registreren</h2>
 
-        <form class="signup-form" method="post" action="../app/views/save.php">
+        <form class="signup-form" method="post" action="../app/src/save.php">
             <input type="text" name="first" placeholder="Voornaam">
             <input type="text" name="last" placeholder="Achternaam">
             <input type="text" name="email" placeholder="E-Mail">

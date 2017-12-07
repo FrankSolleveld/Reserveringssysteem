@@ -30,6 +30,7 @@ require_once '../app/src/database.php';
 
 <body>
 <?php
+
 include_once '../app/views/header.php';
 include_once '../app/views/content.php';
 include_once '../app/views/signup.php';

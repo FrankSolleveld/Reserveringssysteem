@@ -20,3 +20,7 @@
 - Registering for the site now works and the data is being storen on de database.
 - The edited page is especially save.php and the admin page.
 - Fixed validation from user input.
+
+7 december 2017:
+- Login works;
+- Created login.php & logout.php.
