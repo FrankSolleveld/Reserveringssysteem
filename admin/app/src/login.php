@@ -1,6 +1,4 @@
 <?php
-
-// Start de sessie op.
 session_start();
 
 
@@ -49,13 +47,12 @@ if (isset($_POST['submit'])) {
                     exit();
 
                 } elseif ($hashedPwdCheck == true) {
-
                     // Login user --> SESSION variable.
-                    $_SESSION['u_id'] == $row['id'];
-                    $_SESSION['u_first'] == $row['first'];
-                    $_SESSION['u_last'] == $row['last'];
-                    $_SESSION['u_email'] == $row['email'];
-                    $_SESSION['u_uid'] == $row['uid'];
+                    $_SESSION['u_id']       = $row['id'];
+                    $_SESSION['u_first']    = $row['first'];
+                    $_SESSION['u_last']     = $row['last'];
+                    $_SESSION['u_email']    = $row['email'];
+                    $_SESSION['u_uid']      = $row['uid'];
                     header("Location: ../../public/index.php?login=success");
                     exit();
 

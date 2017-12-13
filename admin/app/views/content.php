@@ -21,7 +21,7 @@ $values = $_POST;
 
 <section class="main-container">
     <div class="main-wrapper">
-        <h2>Home</h2>
+
         <?php
          // Zodra iemand is ingelogd, wordt deze code uitgevoerd.
         if (isset($_SESSION['u_id'])) {

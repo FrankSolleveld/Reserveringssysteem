@@ -24,3 +24,19 @@
 7 december 2017:
 - Login works;
 - Created login.php & logout.php.
+
+13 december 2017:
+- Login fix;
+- Sign out works
+- If Frank = logged in, register forms shows up;
+- Layout customer journey;
+- Added calendar;
+- Admin can add products;
+- Only Dick and Sander can add products;
+- Added product database.
+
+What's coming?
+- Data validation for admins;
+- Enriched customer journey;
+- Database for customer information;
+- Orders can be placed and users can receive an email.

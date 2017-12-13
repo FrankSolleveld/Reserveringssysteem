@@ -18,6 +18,13 @@ $values = $_POST;
 }*/
 
 ?>
+<!-- jQuery heeft een kalender ingebouwd. Dus met deze regels code krijg ik een eigen kalender zonder dat ik dat hoef te programmeren. -->
+<script>
+    $( function() {
+        $( "#fromDate" ).datepicker();
+        $( "#toDate" ).datepicker();
+    } );
+</script>
 <div id="viewport">
 
 <div class="mainframe">
@@ -27,16 +34,19 @@ $values = $_POST;
     <div class="leftPanel ">
 
         <p>Selecteer welk product u wilt reserveren.</p>
-        <ul>
-            <li>Epson Beamer, 6 beschikbaar.</li>
-            <li>Iets anders, namelijk: <form><input type="text" name="differentProduct" placeholder="product" ></form></li>
-        </ul>
+
+        <select id="producten" name="producten">
+            <!-- option moet uiteindelijk door PHP worden toegevoegd naarmate de producten toenemen -->
+            <option value="null">Product</option>
+            <option value="epson">Epson EB-440W</option>
+            <option value=""></option>
+        </select>
 
         <p>Hoe lang zou u het gereserveerde product willen gebruiken?</p>
 
         <form method="post">
-            <input type="date" name="firstDate" placeholder="24-04-2017">
-            <input type="date" name="lastDate" placeholder="30-04-2017">
+            <p>Van: <input type="text" id="fromDate"></p>
+            <p>Tot: <input type="text" id="toDate"></p>
         </form>
     </div>
 

@@ -50,8 +50,16 @@ ul {
     
 }
 
-input {
+input{
     height:30px;
+    line-height: 30px;
+    margin: 8px;
+}
+
+option {
+    line-height:30px;
+    margin: 8px;
+    width: 100%;
 }
 
 #email-field {

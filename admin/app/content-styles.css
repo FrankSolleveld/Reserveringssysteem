@@ -87,6 +87,7 @@ header .nav-login a {
 
 .main-container {
     padding-top:40px;
+
 }
 
 .main-container h2 {
@@ -123,6 +124,17 @@ header .nav-login a {
     height:40px;
     border:none;
     background-color: #222;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+#signOut {
+    margin:0 auto;
+    display: block;
+    height:40px;
+    border:none;
+    background-color: #0e0e0e;
     cursor: pointer;
     font-size: 16px;
     color: white;

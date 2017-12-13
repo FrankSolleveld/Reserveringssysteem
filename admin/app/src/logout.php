@@ -9,7 +9,7 @@ if (isset($_POST['submit'])){
     // Alle sessies vernietigen.
     session_destroy();
     // User wordt gelinkt naar de homepage.
-    header("Location:../../public/public.php");
+    header("Location:../../public/index.php");
     exit();
 
 }

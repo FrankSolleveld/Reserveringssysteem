@@ -2,8 +2,7 @@
 
 
 $values = $_POST;
-include_once "header.php";
-include_once "footer.php";
+
 /**if(isset($_POST['submit']))
 {
     $username = $_POST['username'];

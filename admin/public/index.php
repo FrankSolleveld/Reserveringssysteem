@@ -20,8 +20,8 @@ require_once '../app/src/database.php';
     <link rel="stylesheet" href="../app/normalize.css">
     <link rel="stylesheet" href="../app/main.css">
     <link rel="stylesheet" href="../app/content-styles.css">
+    <link rel=stylesheet href="../app/admin.css" type="text/css"/>
 
-    <!-- Javascripts -->
     <!-- Javascripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -33,7 +33,18 @@ require_once '../app/src/database.php';
 
 include_once '../app/views/header.php';
 include_once '../app/views/content.php';
-include_once '../app/views/signup.php';
+if ($_SESSION['u_uid'] == 'frank') {
+
+    include '../app/views/signup.php';
+
+} elseif (($_SESSION['u_uid'] == 'dick') ||($_SESSION['u_uid'] == 'sander')) {
+
+    include '../app/views/admin-panel.php';
+
+} else {
+
+    ?> <p> Je moet ingelogd zijn om de content op deze pagina te kunnen bekijken. </p> <?php
+}
 include_once '../app/views/footer.php';
 
 ?>
