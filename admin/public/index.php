@@ -1,7 +1,11 @@
 <?php
-require_once '../app/src/database.php';
-?>
+session_start();
 
+require_once '../app/src/database.php';
+
+?>
+<!doctype html>
+<html lang="en">
 <head>
 
     <meta charset="utf-8">
@@ -25,28 +29,35 @@ require_once '../app/src/database.php';
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
 </head>
-
 <body>
 <?php
 
-include_once '../app/views/header.php';
-include_once '../app/views/content.php';
+include '../app/views/header.php';
+
 if ($_SESSION['u_uid'] == 'frank') {
 
     include '../app/views/signup.php';
 
-} elseif (($_SESSION['u_uid'] == 'dick') ||($_SESSION['u_uid'] == 'sander')) {
+} elseif ($_SESSION['u_uid'] == 'dick' || ($_SESSION['u_uid'] == 'sander')) {
+    require '../app/views/admin-panel.php';
 
-    include '../app/views/admin-panel.php';
+} else { ?>
 
-} elseif (($_SESSION['u_uid'] == 'sunnie')) {
+    <p>Je moet ingelogd zijn om dingen te bereiken op deze pagina.</p>
 
-    ?> <p> Hoi, <?php print ($_SESSION['u_uid']);?>.</p> <?php
+<?php
+
 }
-include_once '../app/views/footer.php';
+
+include '../app/views/content.php';
+include '../app/views/footer.php';
 
 ?>
 
 </body>
+</html>
+
+
+
 
 </html>

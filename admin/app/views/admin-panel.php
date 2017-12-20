@@ -1,8 +1,21 @@
 <?php
+require_once '../app/src/database.php';
 
-require_once '../src/productDatabse.php';
-$values = $_POST;
+//Pak data uit database
+$query = "SELECT * FROM products";
 
+$result = mysqli_query($db, $query)
+    or die('Error: '.mysqli_error($db));
+
+
+//Loop through the result to create a custom array
+$products = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $products[] = $row;
+}
+
+//Close connection
+mysqli_close($db);
 ?>
 <!-- CSS inladen -->
 <link rel="stylesheet" type="text/css" href="../admin.css"/>

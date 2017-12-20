@@ -1,18 +1,14 @@
 <?php
 
+// Connectie maken met database
 
-$user = 'root';
-$password = 'root';
-$db = 'loginsystem';
-$host = 'localhost';
-$port = 8889;
+$user       = 'root';
+$password   = 'root';
+$database   = 'producten';
+$host       = 'localhost';
+$port       = 8889;
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-    $link,
-    $host,
-    $user,
-    $password,
-    $db,
-    $port
-);
+
+$db = mysqli_connect($host, $user, $password, $database)
+    or die ('Error: '.mysqli_connect_error());
+

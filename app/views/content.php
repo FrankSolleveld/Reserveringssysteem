@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franksolleveld
- * Date: 15-11-17
- * Time: 15:23
- */
-require_once '../src/productDatabase.php';
+
+require '../admin/app/src/database.php';
 
 $values = $_POST;
 
@@ -41,7 +36,7 @@ $values = $_POST;
             <!-- Option wordt meer naarmate er meerdere producten komen. -->
             <?php foreach ($products as $product) {
 
-                ?> <option name="product"><?= $product['name']; ?> - <?= $product['quantity']; ?> </option>
+                ?> <option name="product"><?= $product['name']; ?> - <?= $product['quantity']; ?> beschikbaar </option>
                 <?php
 
             } ?>
@@ -59,11 +54,11 @@ $values = $_POST;
 
     <div class="rightPanel">
         <p>Vul hieronder uw gegevens in.</p>
-        <form method="post" action="../src/reservation.php">
+        <form method="post" action="../app/src/reservation.php">
             <input type="text" name="firstName" placeholder="Voornaam">
             <input type="text" name="lastName" placeholder="Achternaam"><br>
-            <input type="number" name="zip" placeholder="2252 BM">
-            <input  id="email-field" type="email" name="email" placeholder="E-mail">
+            <input type="text" name="zip" placeholder="2252 BM">
+            <input  id="email-field" type="email" name="email" placeholder="info@example.com">
             <input type="number" name="phonenumber" placeholder="Telefoonnummer">
             <button type="submit">Verzenden</button>
         </form>

@@ -5,11 +5,11 @@ require_once "database.php";
 if(isset($_POST['submit'])) {
 
     // mysqli_real_escape_string --> zodat users geen code erin kunnen stoppen
-    $first = mysqli_real_escape_string($link, $_POST['first']);
-    $last = mysqli_real_escape_string($link, $_POST['last']);
-    $email = mysqli_real_escape_string($link, $_POST['email']);
-    $uid = mysqli_real_escape_string($link, $_POST['uid']);
-    $pwd = mysqli_real_escape_string($link  , $_POST['pwd']);
+    $first = mysqli_real_escape_string($db, $_POST['first']);
+    $last = mysqli_real_escape_string($db, $_POST['last']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $uid = mysqli_real_escape_string($db, $_POST['uid']);
+    $pwd = mysqli_real_escape_string($db  , $_POST['pwd']);
 
 
     // Validatie
@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) {
             } else {
 
                 $sql = "SELECT * FROM users WHERE uid = '$uid'";
-                $result = mysqli_query($link, $sql);
+                $result = mysqli_query($db, $sql);
                 $resultCheck = mysqli_num_rows($result);
 
                 // Als username == admin --> user taken. Men mag geen admin heten in mijn optiek.
@@ -51,8 +51,8 @@ if(isset($_POST['submit'])) {
                     // User in database zetten
                     $sql = "INSERT INTO users (first, last, email, uid, pwd) VALUES ('$first', '$last', '$email', '$uid', '$hashedPwd');";
 
-                    $result = mysqli_query($link, $sql)
-                    or die('Error '.mysqli_error($link).' with query '.$query);
+                    $result = mysqli_query($db, $sql)
+                    or die('Error '.mysqli_error($db).' with query '.$query);
 
 
                     mysqli_close($db);

@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-
 if (isset($_POST['submit'])) {
 
     include 'database.php';
 
-    $uid = mysqli_real_escape_string($link, $_POST['uid']);
-    $pwd = mysqli_real_escape_string($link, $_POST['pwd']);
+    $uid = mysqli_real_escape_string($db, $_POST['uid']);
+    $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
 
     // Fout afhandeling
     // Check of input leeg is
@@ -22,7 +21,8 @@ if (isset($_POST['submit'])) {
 
         // Controleren of de username bestaat die de user heeft ingevoer. Alle gegevens van die matchende uid worden daarna in aan array gestopt op line 36.
         $sql = "SELECT * FROM users WHERE uid = '$uid' OR email = '$uid'";
-        $result = mysqli_query($link, $sql);
+
+        $result = mysqli_query($db, $sql);
         $resultCheck = mysqli_num_rows($result);
 
         // Als $resultCheck kleiner is dan 1, zijn er geen resultaten gevonden voor de username die de user als input heeft gegeven.
