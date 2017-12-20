@@ -5,6 +5,7 @@
  * Date: 15-11-17
  * Time: 15:23
  */
+require_once '../src/productDatabase.php';
 
 $values = $_POST;
 
@@ -35,30 +36,36 @@ $values = $_POST;
 
         <p>Selecteer welk product u wilt reserveren.</p>
 
-        <select id="producten" name="producten">
-            <!-- option moet uiteindelijk door PHP worden toegevoegd naarmate de producten toenemen -->
-            <option value="null">Product</option>
-            <option value="epson">Epson EB-440W</option>
-            <option value=""></option>
+        <select id="producten" name="producten" method="post">
+
+            <!-- Option wordt meer naarmate er meerdere producten komen. -->
+            <?php foreach ($products as $product) {
+
+                ?> <option name="product"><?= $product['name']; ?> - <?= $product['quantity']; ?> </option>
+                <?php
+
+            } ?>
+
+
         </select>
 
         <p>Hoe lang zou u het gereserveerde product willen gebruiken?</p>
 
         <form method="post">
-            <p>Van: <input type="text" id="fromDate"></p>
-            <p>Tot: <input type="text" id="toDate"></p>
+            <p>Van: <input type="text" id="fromDate" name="fromDate"></p>
+            <p>Tot: <input type="text" id="toDate" name="toDate"> </p>
         </form>
     </div>
 
     <div class="rightPanel">
         <p>Vul hieronder uw gegevens in.</p>
-        <form method="post" >
+        <form method="post" action="../src/reservation.php">
             <input type="text" name="firstName" placeholder="Voornaam">
             <input type="text" name="lastName" placeholder="Achternaam"><br>
             <input type="number" name="zip" placeholder="2252 BM">
             <input  id="email-field" type="email" name="email" placeholder="E-mail">
             <input type="number" name="phonenumber" placeholder="Telefoonnummer">
-            <!--<button type="submit">Verzenden</button>-->
+            <button type="submit">Verzenden</button>
         </form>
 
     </div>

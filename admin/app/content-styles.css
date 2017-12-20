@@ -108,7 +108,6 @@ header .nav-login a {
 
 .signup-form input {
     width:90%;
-    height:40px;
     padding:0px 5%;
     border:none;
     background-color: #fff;
@@ -143,7 +142,6 @@ header .nav-login a {
 .signup-form button:hover {
     background-color: #111;
 }
-
 
 
 

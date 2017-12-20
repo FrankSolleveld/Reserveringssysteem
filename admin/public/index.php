@@ -2,8 +2,6 @@
 require_once '../app/src/database.php';
 ?>
 
-
-
 <head>
 
     <meta charset="utf-8">
@@ -41,9 +39,9 @@ if ($_SESSION['u_uid'] == 'frank') {
 
     include '../app/views/admin-panel.php';
 
-} else {
+} elseif (($_SESSION['u_uid'] == 'sunnie')) {
 
-    ?> <p> Je moet ingelogd zijn om de content op deze pagina te kunnen bekijken. </p> <?php
+    ?> <p> Hoi, <?php print ($_SESSION['u_uid']);?>.</p> <?php
 }
 include_once '../app/views/footer.php';
 

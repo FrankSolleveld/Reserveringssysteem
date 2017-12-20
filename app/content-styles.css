@@ -1,3 +1,16 @@
+@media screen
+and (min-device-width: 1400px)
+{
+
+    .input {
+
+
+
+    }
+
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -21,9 +34,10 @@ body {
     background: white;
     width: 60%;
     padding: 20px;
-    flex-direction: row;
+    flex-direction: column;
     display: flex; /* Ik gebruik flexbox omdat dat gemakkelijk is om mee te stylen. */
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .leftPanel {
@@ -54,6 +68,7 @@ input{
     height:30px;
     line-height: 30px;
     margin: 8px;
+    width: 70%;
 }
 
 option {
@@ -63,5 +78,22 @@ option {
 }
 
 #email-field {
-    width:355px;
+    width:70%;
+}
+
+@media screen and (min-width: 850px) {
+    input {
+        width: 40%;
+    }
+    #email-field {
+        width:40%;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .mainframe {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
