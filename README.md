@@ -35,8 +35,13 @@
 - Only Dick and Sander can add products;
 - Added product database.
 
-What's coming?
+21 december 2017:
+- Fixed database-related issues;
+- Admins can add products and see what's in stock;
+- Customers can now see a section of available products;
 - Data validation for admins;
+- Added table for customers where reservations can be put into.
+
+What's coming?
 - Enriched customer journey;
-- Database for customer information;
 - Orders can be placed and users can receive an email.

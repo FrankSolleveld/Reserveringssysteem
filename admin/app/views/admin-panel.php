@@ -28,6 +28,7 @@ mysqli_close($db);
     <form class="signup-form" method="post" action="../app/src/adminDB.php">
         <input type="text" name="productName" placeholder="Productnaam">
         <input type="number" name="quantity" placeholder="Hoeveelheid">
+        <input type="number" name="price" placeholder="Prijs per dag in euro's">
 
         <button type="submit" name="submit">Product invoeren</button>
     </form>
@@ -40,6 +41,7 @@ mysqli_close($db);
 
             <th>Productnaam</th>
             <th>Quantity</th>
+            <th>Prijs per dag in €</th>
 
         </tr>
         </thead>
@@ -49,7 +51,7 @@ mysqli_close($db);
             <tr>
                 <td><?= $product['name']; ?></td>
                 <td><?= $product['quantity']; ?></td>
-
+                <td><?= $product['price'];?></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
             </tr>
         <?php } ?>
