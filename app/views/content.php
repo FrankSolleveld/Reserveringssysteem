@@ -8,7 +8,7 @@ $values = $_POST;
 $query = "SELECT * FROM products";
 $result = mysqli_query($db, $query);
 
-//Zet de rewsultaten in een array
+//Zet de resultaten in een array
 $availableProducts = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $availableProducts[] = $row;
@@ -65,14 +65,18 @@ mysqli_close($db);
 
         <p>Hoe lang zou u het gereserveerde product willen gebruiken?</p>
 
-        <form method="post">
+        <form method="post" action="/app/src/dateValidation.php">
             <p>Van: <input type="text" id="fromDate" name="fromDate"></p>
             <p>Tot: <input type="text" id="toDate" name="toDate"> </p>
+            <button type="submit">Check beschikbaarheid</button>
         </form>
 
         <section id="pricing">
 
-            <p>De kosten komen neer op:</p>
+            <!-- De data dient hier direct gevalideert te worden, maar hoe doen we dat? -->
+            <!-- toDate - fromDate = aantal dagen. Het aantal dagen x dagprijs is totale kosten -->
+            <p>U reserveert het product x dagen. De kosten komen neer op: <br><br> Dagtarief: € <?= $product['price']; ?></p>
+
 
         </section>
     </div>

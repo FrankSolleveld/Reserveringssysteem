@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
                 mysqli_close($db);
                 print ("db geuploaded en connectie is gesloten");
-                header('Location: ../../../public/index.php');
+                header('Location: ../../public/index.php');
                 exit;
             }
 
