@@ -22,24 +22,28 @@ mysqli_close($db);
 
 <section class="container">
 
+    <div class="register-product">
     <h1>Producten invoeren</h1>
 
     <!-- Class is signup-form omdat het dezelfde properties gebruikt als het registreer-formulier -->
     <form class="signup-form" method="post" action="../app/src/adminDB.php">
         <input type="text" name="productName" placeholder="Productnaam">
+        <input type="text" name="category" placeholder="Categorie: Laptop etc.">
         <input type="number" name="quantity" placeholder="Hoeveelheid">
         <input type="number" name="price" placeholder="Prijs per dag in euro's">
 
         <button type="submit" name="submit">Product invoeren</button>
     </form>
-
+    </div>
     <!-- Dit wordt de lijst met alle beschikbare producten, dan hebben Dick en Sander een overzicht van wat we hebben -->
-    <div class="productsView">
+    <div class="products-view">
+        <h1>Overzichtslijst</h1>
     <table>
         <thead>
         <tr>
 
             <th>Productnaam</th>
+            <th>Categorie</th>
             <th>Quantity</th>
             <th>Prijs per dag in €</th>
 
@@ -50,6 +54,7 @@ mysqli_close($db);
         <?php foreach ($products as $product) { ?>
             <tr>
                 <td><?= $product['name']; ?></td>
+                <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->

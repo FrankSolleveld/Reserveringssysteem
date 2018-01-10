@@ -5,11 +5,12 @@ if(isset($_POST['submit'])) {
 
 // mysqli_real_escape_string --> zodat users geen code erin kunnen stoppen
     $productName = mysqli_real_escape_string($db, $_POST['productName']);
+    $category = mysqli_real_escape_string($db, $_POST['category']);
     $quantity = mysqli_real_escape_string($db, $_POST['quantity']);
     $price = mysqli_real_escape_string($db, $_POST['price']);
 
 // SQL Query aanmaken en uitvoeren
-    $sql = "INSERT INTO products (id, name, quantity, price) VALUES ('$id', '$productName', '$quantity', '$price');";
+    $sql = "INSERT INTO products (name, category, quantity, price) VALUES ('$productName', '$category', '$quantity', '$price');";
     $result = mysqli_query($db, $sql)
     or die('Error ' . mysqli_error($db) . ' with query ' . $query);
 
