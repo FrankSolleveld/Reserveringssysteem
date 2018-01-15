@@ -25,6 +25,8 @@ require_once '../app/src/database.php';
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+
+
 </head>
 
 <body>
@@ -32,7 +34,9 @@ require_once '../app/src/database.php';
 include '../app/views/header.php';
 include '../app/views/content.php';
 include '../app/views/footer.php';
+
 ?>
+
 </body>
 
 </html>

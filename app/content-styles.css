@@ -77,15 +77,15 @@ option {
     width: 100%;
 }
 
-#email-field {
-    width:70%;
+#form-email {
+    width:150px;
 }
 
 @media screen and (min-width: 850px) {
     input {
         width: 40%;
     }
-    #email-field {
+    #form-email {
         width:40%;
     }
 }
@@ -96,4 +96,12 @@ option {
         flex-direction: row;
         justify-content: center;
     }
+}
+
+.form-error {
+    color: red;
+}
+
+.input-error {
+    box-shadow: 0 0 5px red;
 }

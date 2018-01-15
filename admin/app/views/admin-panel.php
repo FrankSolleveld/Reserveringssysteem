@@ -2,6 +2,7 @@
 require_once '../app/src/database.php';
 
 //Pak data uit database
+// Query voor overzichtslijst
 $query = "SELECT * FROM products";
 
 $result = mysqli_query($db, $query)
@@ -14,11 +15,23 @@ while ($row = mysqli_fetch_assoc($result)) {
     $products[] = $row;
 }
 
+// Query voor reserveringen
+$orderQuery = "SELECT * FROM orders";
+
+$orderResult = mysqli_query($db, $orderQuery)
+    or die('Error: '.mysqli_error($db));
+
+// Array voor reserveringen
+$orders = [];
+while ($ordersRow = mysqli_fetch_assoc($orderResult)){
+    $orders[] = $ordersRow;
+}
+
 //Close connection
 mysqli_close($db);
 ?>
 <!-- CSS inladen -->
-<link rel="stylesheet" type="text/css" href="../admin.css"/>
+<link rel="stylesheet" type="text/css" href="../adminpage.css"/>
 
 <section class="container">
 
@@ -36,16 +49,19 @@ mysqli_close($db);
     </form>
     </div>
     <!-- Dit wordt de lijst met alle beschikbare producten, dan hebben Dick en Sander een overzicht van wat we hebben -->
+    <div class="lists">
     <div class="products-view">
         <h1>Overzichtslijst</h1>
     <table>
         <thead>
         <tr>
 
+            <th>Product ID</th>
             <th>Productnaam</th>
             <th>Categorie</th>
             <th>Quantity</th>
             <th>Prijs per dag in €</th>
+            <th>Edit</th>
 
         </tr>
         </thead>
@@ -53,6 +69,7 @@ mysqli_close($db);
 
         <?php foreach ($products as $product) { ?>
             <tr>
+                <td><?= $product['id']; ?></td>
                 <td><?= $product['name']; ?></td>
                 <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
@@ -65,5 +82,41 @@ mysqli_close($db);
     </table>
     </div>
 
+    <div class="orders-view">
+        <h1>Reserveringen</h1><br>
+        <table>
+            <thead>
+            <tr>
+
+                <th>Klantnaam</th>
+                <th>Product ID</th>
+                <th>Van</th>
+                <th>Tot</th>
+                <th>E-mail</th>
+                <th>Telefoonnummer</th>
+                <th>Kosten</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php foreach ($orders as $order) { ?>
+                <tr>
+                    <td><?= $order['lastName']; ?></td>
+                    <td><?= $order['product']; ?> </td>
+                    <td><?= $order['from_date']; ?></td>
+                    <td><?= $order['to_date']; ?></td>
+                    <td><?= $order['email']; ?></td>
+                    <td><?= $order['phonenumber']; ?></td>
+                    <!--                    <td>--><?//= $order['fromDate']; ?><!--</td>-->
+                    <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
+                </tr>
+            <?php } ?>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
 
 </section>
+

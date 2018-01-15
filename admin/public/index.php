@@ -20,9 +20,9 @@ require_once '../app/src/database.php';
 
     <!-- CSS files -->
     <link rel="stylesheet" href="../app/normalize.css">
-    <link rel="stylesheet" href="../app/main.css">
-    <link rel="stylesheet" href="../app/content-styles.css">
-    <link rel=stylesheet href="../app/admin.css" type="text/css"/>
+    <link rel="stylesheet" href="../app/main-layout.css">
+    <link rel="stylesheet" href="../app/content.css">
+    <link rel=stylesheet href="../app/adminpage.css" type="text/css"/>
 
     <!-- Javascripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
