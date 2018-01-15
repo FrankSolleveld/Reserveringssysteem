@@ -42,6 +42,10 @@
 - Data validation for admins;
 - Added table for customers where reservations can be put into.
 
-What's coming?
-- Enriched customer journey;
-- Orders can be placed and users can receive an email.
+26 december 2017:
+- Created dateValidation.php, doesn't function accordingly yet.
+- Made some basic pricing adjustments.
+
+15 january 2018:
+- AJAX Form handling;
+- This is a test.
