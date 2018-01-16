@@ -21,8 +21,8 @@ mysqli_close($db);
 <!-- jQuery heeft een kalender ingebouwd. Dus met deze regels code krijg ik een eigen kalender zonder dat ik dat hoef te programmeren. -->
 <script>
     $( function() {
-        $('#fromDate').datepicker({ minDate:0, maxDate: '+1m', dateFormat: 'dd/mm/yy'});
-        $( '#toDate' ).datepicker({ minDate:'+1d', maxDate: '+1m', dateFormat: 'dd/mm/yy'});
+        $('#fromDate').datepicker({ minDate:'+1d', maxDate: '+1m', dateFormat: 'dd/mm/yy'});
+        $( '#toDate' ).datepicker({ minDate:'+2d', maxDate: '+1m', dateFormat: 'dd/mm/yy'});
     } );
 
 </script>
@@ -52,11 +52,9 @@ mysqli_close($db);
 
         <p>Hoe lang zou u het gereserveerde product willen gebruiken?</p>
 
-
-
             <p>Van:<input type="text" id="fromDate" name="fromDate"> </p>
             <p>Tot: <input type="text" id="toDate" name="toDate"> </p>
-            <button type="submit">Data invoeren</button>
+<!--            <button type="submit">Data invoeren</button>-->
 <!--        </form>-->
 
 
@@ -64,8 +62,8 @@ mysqli_close($db);
 
             <!-- De data dient hier direct gevalideert te worden, maar hoe doen we dat? -->
             <!-- toDate - fromDate = aantal dagen. Het aantal dagen x dagprijs is totale kosten -->
-            <p>U reserveert het product <?= $numDays  ?> X dagen. De kosten komen neer op: <br><br> Dagtarief: € <?= $product['price']; ?></p>
-
+<!--            <p>U reserveert het product --><?//= $numDays  ?><!-- X dagen. De kosten komen neer op: <br><br> Dagtarief: € --><?//= $product['price']; ?><!--</p>-->
+            <p>U betaalt minimaal voor een dag. Daarnaast gelden er administratiekosten van €12,50 die eenmalig verrekend worden.</p>
 
         </section>
     </div>

@@ -5,7 +5,7 @@ require_once '../app/src/database.php';
 <head>
 
 	<meta charset="utf-8">
-	<title>Compleet IT</title>
+	<title>Compleet IT Reserveringen</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 

@@ -74,6 +74,7 @@ mysqli_close($db);
                 <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
+                <td><a href="edit-edit-products.php?id=<?= $order['id']; ?>">Edit</a></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
             </tr>
         <?php } ?>
@@ -94,7 +95,7 @@ mysqli_close($db);
                 <th>Tot</th>
                 <th>E-mail</th>
                 <th>Telefoonnummer</th>
-                <th>Kosten</th>
+                <th>Order verwijderen</th>
 
             </tr>
             </thead>
@@ -108,8 +109,8 @@ mysqli_close($db);
                     <td><?= $order['to_date']; ?></td>
                     <td><?= $order['email']; ?></td>
                     <td><?= $order['phonenumber']; ?></td>
-                    <!--                    <td>--><?//= $order['fromDate']; ?><!--</td>-->
-                    <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
+                    <td><a href="../app/views/delete-orders.php?id=<?= $order['id']; ?>">Delete</a></td>
+
                 </tr>
             <?php } ?>
 

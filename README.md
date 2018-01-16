@@ -51,6 +51,9 @@
 - Date is being handled accordingly;
 - Admin page modified: admins can see who reserved what;
 
+16 january 2018:
+- Admins can delete orders;
+
 What's coming:
 - Edit page for admins
 - Costs calculated

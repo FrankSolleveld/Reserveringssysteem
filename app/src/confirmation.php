@@ -3,14 +3,16 @@
 require_once 'database.php';
 
 
-    $query = "SELECT * FROM orders";
-    $result = mysqli_query($db, $query);
+$email = $_GET['email'];
+
+$query = "SELECT FROM orders WHERE email = " . mysqli_escape_string($db, $email);
+$result = mysqli_query($db, $query) or die ('Error: '.mysqli_error($db));
 
 //Zet de resultaten in een array
-    $orderNumbers = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $orderNumbers[] = $row;
-    }
+$availableOrder = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $availableOrder[] = $row;
+}
 
 ?>
 
@@ -36,9 +38,9 @@ include_once "../views/header.php"; ?>
     <p>Bedankt. We hebben uw reservering ontvangen en zullen zo spoedig mogelijk contact met u opnemen.</p>
     <p>Hieronder een overzicht van uw reservering:</p>
     <br>
-    <p>Naam: <?php print_r($firstName) ?> <?php print_r($lastName) ?> </p>
+    <p>Naam: <?php $availableOrder['firstName']; ?> <?php $availableOrder['lastName']; ?> </p>
 
-    <p>Reserverings ID: <?php print_r($orderNumbers['order-id']) ?></p>
+    <p>Reserverings ID: <?php $availableOrder['id'] ?></p>
 </div>
 
 <?php
