@@ -2,6 +2,22 @@
     box-sizing: border-box;
 }
 
+.emptyMsg {
+
+    background-color: white;
+    color:black;
+
+    /* Using 100% to display all over the screen and using flexbox te conteralize */
+    width:100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     height:100%;
@@ -26,6 +42,7 @@ header nav {
 
 header nav ul {
     float: left;
+    margin: auto;
 }
 
 header nav ul li {
@@ -34,8 +51,9 @@ header nav ul li {
 }
 
 header nav ul li a {
-    font-size: 16px;
-    color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: white;
     line-height:63px;
 }
 
@@ -102,8 +120,9 @@ header .nav-login a {
 
 .signup-form {
     width:400px;
-    margin:0 auto;
+    /*margin:0 auto;*/
     padding-top: 30px;
+    margin-top: 10px;
 }
 
 .signup-form input {
@@ -129,13 +148,15 @@ header .nav-login a {
 }
 
 #signOut {
-    margin:0 auto;
-    display: block;
-    height:40px;
-    border:none;
-    background-color: #0e0e0e;
+    /* Margin attributes makes the button stay on a better position */
+    margin-top:10px;
+    margin-right: 0px;
+    height:30px;
+    width: 80px;
+    float: right;
+    background-color: #848787;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
 }
 

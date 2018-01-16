@@ -34,7 +34,7 @@ mysqli_close($db);
 <link rel="stylesheet" type="text/css" href="../adminpage.css"/>
 
 <section class="container">
-
+    <div class="lists">
     <div class="register-product">
     <h1>Producten invoeren</h1>
 
@@ -49,7 +49,7 @@ mysqli_close($db);
     </form>
     </div>
     <!-- Dit wordt de lijst met alle beschikbare producten, dan hebben Dick en Sander een overzicht van wat we hebben -->
-    <div class="lists">
+
     <div class="products-view">
         <h1>Overzichtslijst</h1>
     <table>
@@ -74,7 +74,7 @@ mysqli_close($db);
                 <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
-                <td><a href="../app/views/edit-products.php?id=<?= $products['id']; ?>">Edit</a></td>
+                <td><a href="../app/views/edit-products.php?id=<?= $product['id']; ?>">Edit</a></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
             </tr>
         <?php } ?>
@@ -82,7 +82,7 @@ mysqli_close($db);
         </tbody>
     </table>
     </div>
-
+    </div>
     <div class="orders-view">
         <h1>Reserveringen</h1><br>
         <table>
@@ -103,6 +103,7 @@ mysqli_close($db);
 
             <?php foreach ($orders as $order) { ?>
                 <tr>
+
                     <td><?= $order['lastName']; ?></td>
                     <td><?= $order['product']; ?> </td>
                     <td><?= $order['from_date']; ?></td>
@@ -117,7 +118,7 @@ mysqli_close($db);
             </tbody>
         </table>
     </div>
-    </div>
+
 
 </section>
 

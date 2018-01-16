@@ -1,6 +1,7 @@
 <?php
 //Require database in this file & image helpers
 require_once "../src/database.php";
+session_start();
 
 //Check if Post isset, else do nothing
 if (isset($_POST['submit'])) {
@@ -64,13 +65,51 @@ mysqli_close($db);
 <!doctype html>
 <html>
 <head>
-    <title>Music Collection Edit</title>
+    <title>Compleet IT - Admin Edit</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../main-layout.css"/>
+    <link rel="stylesheet" type="text/css" href="../content.css"/>
+    <link rel="stylesheet" type="text/css" href="../edit-page.css"/>
 </head>
 <body>
-<h1>Edit "<?= $product['id'] . ' - ' . $product['name']; ?>"</h1>
+<header>
+    <nav>
+        <div class="main-wrapper">
 
+            <ul>
+                <li><a href="index.php">Home</a></li>
+            </ul>
+
+            <div class="nav-login">
+
+                <?php if (isset($_SESSION['u_id'])) { ?>
+                    <!--   Zodra user is ingelogd, krijgt hij/zij de optie om uit te loggen.-->
+                    <form action="../src/logout.php" method="post">
+                        <button id="signOut" type="submit" name="submit">Log uit</button>
+                    </form>
+                <?php } else { ?>
+
+                    <!-- Zodra er geen user is ingelogd, krijg je het inlogvenster te zien.-->
+                    <form action="../src/login.php" method="post">
+                        <input type="text" name="uid" placeholder="Gebruikersnaam / E-mail">
+                        <input type="password" name="pwd" placeholder="Wachtwoord">
+
+                        <button type="submit" name="submit">Log in</button>
+                    </form>
+
+                <?php } ?>
+
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<section>
+<h1>Edit "<?= $product['id'] . ' - ' . $product['productname']; ?>"</h1>
+
+<div id="form">
 <form action="" method="post" enctype="multipart/form-data">
     <div class="data-field">
         <label for="id">Product ID</label>
@@ -104,7 +143,15 @@ mysqli_close($db);
     </div>
 </form>
 <div>
-    <a href="index.php">Go back to the list</a>
+    <a href="../../public/index.php">Terug naar Admin Panel</a>
 </div>
+</div>
+</section>
+<?php
+
+include_once "footer.php";
+
+?>
+?>
 </body>
 </html>

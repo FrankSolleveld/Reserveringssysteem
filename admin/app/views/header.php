@@ -3,7 +3,7 @@
         <div class="main-wrapper">
 
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php">Compleet IT | Admin</a></li>
             </ul>
 
             <div class="nav-login">

@@ -1,11 +1,14 @@
+table {
+    background-color:black;
+}
 
 
-th {
+tr {
 
-    width: 50px;
-    height: 10px;
+    width: 60px;
+    height: 25px;
     background-color: gray;
-    padding: 10px;
+    padding: 20px;
 
 }
 
@@ -16,16 +19,46 @@ select {
     width: 70%;
 }
 
-.orders-view {
 
+.lists {
+
+    background-color: #f3f3f3;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    padding:10px;
 
 }
 
-.lists {
+.lists th {
+
     background-color: #f3f3f3;
-    display: flex;
-    justify-content: center;
+
+}
+
+.orders-view {
+
     width: 100%;
+    padding:10px;
+    text-align: center;
+
+}
+
+.orders-view th {
+
+    background-color: #f3f3f3;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 40px;
+
+}
+
+.orders-view td {
+
+    background-color: lightgray;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 40px;
+
+
 }

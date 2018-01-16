@@ -1,0 +1,37 @@
+section {
+    background-color: white;
+    width: 700px;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.data-field  {
+    width:400px;
+    margin:0 auto;
+    background-color: #222222;
+    padding:20px;
+    color: white;
+}
+
+.data-field input {
+    width:90%;
+    padding:0px 5%;
+    border:none;
+    background-color: #fff;
+    line-height:40px;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.data-submit button {
+    margin:0 auto;
+    display: block;
+    width:30%;
+    height:40px;
+    border:none;
+    background-color: #222;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}

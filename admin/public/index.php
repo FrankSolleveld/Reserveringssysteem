@@ -42,9 +42,9 @@ if ($_SESSION['u_uid'] == 'frank') {
     require '../app/views/admin-panel.php';
 
 } else { ?>
-
+    <section class="emptyMsg">
     <p>Je moet ingelogd zijn om dingen te bereiken op deze pagina.</p>
-
+    </section>
 <?php
 
 }
