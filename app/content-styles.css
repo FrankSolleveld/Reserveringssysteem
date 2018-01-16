@@ -32,7 +32,7 @@ body {
 
 .mainframe {
     background: white;
-    width: 60%;
+    width: 70%;
     padding: 20px;
     flex-direction: column;
     display: flex; /* Ik gebruik flexbox omdat dat gemakkelijk is om mee te stylen. */
@@ -78,7 +78,7 @@ option {
 }
 
 #form-email {
-    width:150px;
+    width:100%
 }
 
 @media screen and (min-width: 850px) {

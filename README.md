@@ -53,8 +53,9 @@
 
 16 january 2018:
 - Admins can delete orders;
+- $_GET functionality is now worked out with a last name.
 
 What's coming:
 - Edit page for admins
-- Costs calculated
-- Landing page for customers after placing their reservation.
+- Landing page for customers after placing their reservation
+- $_GET via unique ID, more secure

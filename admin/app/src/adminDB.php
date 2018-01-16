@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
     $price = mysqli_real_escape_string($db, $_POST['price']);
 
 // SQL Query aanmaken en uitvoeren
-    $sql = "INSERT INTO products (name, category, quantity, price) VALUES ('$productName', '$category', '$quantity', '$price');";
+    $sql = "INSERT INTO products (productname, category, quantity, price) VALUES ('$productName', '$category', '$quantity', '$price');";
     $result = mysqli_query($db, $sql)
     or die('Error ' . mysqli_error($db) . ' with query ' . $query);
 

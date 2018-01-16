@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
                 or die('Error '.mysqli_error($db).' with query '.$query);
 
                 // Met GET wordt het ID meegegeven en daarmee kan de landing page alle belangrijke informatie van de klant bevatten.
-                header("Location: confirmation.php?id=<?=['$email'] ?>");
+                header("Location: confirmation.php?lastName=$lastName");
 
             }
         }

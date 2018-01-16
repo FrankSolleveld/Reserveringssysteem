@@ -70,11 +70,11 @@ mysqli_close($db);
         <?php foreach ($products as $product) { ?>
             <tr>
                 <td><?= $product['id']; ?></td>
-                <td><?= $product['name']; ?></td>
+                <td><?= $product['productname']; ?></td>
                 <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
-                <td><a href="edit-edit-products.php?id=<?= $order['id']; ?>">Edit</a></td>
+                <td><a href="../app/views/edit-products.php?id=<?= $products['id']; ?>">Edit</a></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
             </tr>
         <?php } ?>

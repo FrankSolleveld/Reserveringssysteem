@@ -2,17 +2,35 @@
 
 require_once 'database.php';
 
+if (isset($_GET['lastName'])) {
 
-$email = $_GET['email'];
+    $getEmail = $_GET['lastName'];
 
-$query = "SELECT FROM orders WHERE email = " . mysqli_escape_string($db, $email);
-$result = mysqli_query($db, $query) or die ('Error: '.mysqli_error($db));
+    $query = "SELECT * FROM `orders` WHERE `lastName`= '$getEmail'";
+    $result = mysqli_query($db, $query) or die ('Error: '.mysqli_error($db));
 
-//Zet de resultaten in een array
-$availableOrder = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $availableOrder[] = $row;
+    if(mysqli_num_rows($result)) {
+        //Zet de resultaten in een array
+        $availableOrder = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $availableOrder[] = $row;
+
+            print_r($availableOrder);
+        }
+
+    }
+    else {
+        // redirect when db returns no result
+        header('Location: index.php');
+        exit;
+    }
+} else {
+    header('Location: index.php');
+    exit;
+
+
 }
+
 
 ?>
 
@@ -38,7 +56,7 @@ include_once "../views/header.php"; ?>
     <p>Bedankt. We hebben uw reservering ontvangen en zullen zo spoedig mogelijk contact met u opnemen.</p>
     <p>Hieronder een overzicht van uw reservering:</p>
     <br>
-    <p>Naam: <?php $availableOrder['firstName']; ?> <?php $availableOrder['lastName']; ?> </p>
+    <p>Naam: <?php  $availableOrder['0']; ?> <?php $availableOrder['lastName']; ?> </p>
 
     <p>Reserverings ID: <?php $availableOrder['id'] ?></p>
 </div>
@@ -53,3 +71,4 @@ include_once "../views/footer.php";
 
 
 </html>
+
