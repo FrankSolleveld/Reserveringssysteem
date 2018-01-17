@@ -62,6 +62,7 @@ mysqli_close($db);
             <th>Quantity</th>
             <th>Prijs per dag in €</th>
             <th>Edit</th>
+            <th>Verwijderen</th>
 
         </tr>
         </thead>
@@ -75,6 +76,7 @@ mysqli_close($db);
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
                 <td><a href="../app/views/edit-products.php?id=<?= $product['id']; ?>">Edit</a></td>
+                <td><a href="../app/views/delete-products.php?id=<?= $product['id']; ?>">Delete</a></td>
                 <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
             </tr>
         <?php } ?>

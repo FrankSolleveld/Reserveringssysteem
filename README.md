@@ -64,6 +64,7 @@
 - Minor CSS fixes for landing page;
 - email field is wider now;
 - Admin page table CSS fix;
+- Products can also be deleted;
 - ready for launch.
 
 What's coming:

@@ -21,25 +21,28 @@ if (isset($_POST['submit'])) {
 // We geven een bericht af aan de pagina zodra er iets onjist wordt ingevoerd.
     if (empty($firstName)|| empty($lastName) || empty($email) || empty($fromDate) || empty($toDate) || empty($zip) || empty($product))  {
 
+        header("Location: ../../public/index.php");
         ?><span class="form-error">Vul a.u.b. alle velden in!</span><?php
-        print_r($firstName);
-        print_r($_POST);
+//        print_r($firstName);
+//        print_r($_POST);
 
         exit();
     } else {
         // Check voor gebruik van juiste karakters
         if (!preg_match("/^[a-zA-Z- \s]*$/", $firstName) || !preg_match("/^[a-zA-Z \s]*$/", $lastName)) {
 
+            header("Location: ../../public/index.php");
             ?><span class="form-error">De voor- en/of achternaam is verkeerd ingevoerd. Gebruik a.u.b. letters.</span><?php
-            print_r($_POST);
+//            print_r($_POST);
             exit();
 
         } else {
             // Check voor valide e-mail adres
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+                header("Location: ../../public/index.php");
                 ?><span class="form-error">E-mail adres is verkeerd ingevoerd.</span><?php
-                print_r($_POST);
+//                print_r($_POST);
                 exit();
 
             } else {
