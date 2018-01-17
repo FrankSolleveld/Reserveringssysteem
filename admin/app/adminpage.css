@@ -5,6 +5,33 @@ select {
     width: 70%;
 }
 
+.register-form {
+    width:400px;
+    padding-top: 30px;
+    margin-top: 10px;
+}
+
+.register-form input {
+    width:90%;
+    padding:0px 5%;
+    border:none;
+    background-color: #fff;
+    line-height:40px;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.register-form button {
+    margin:0 auto;
+    display: block;
+    width:30%;
+    height:40px;
+    border:none;
+    background-color: #222;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
 
 .lists {
 

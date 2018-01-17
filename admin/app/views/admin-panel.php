@@ -39,7 +39,7 @@ mysqli_close($db);
     <h1>Producten invoeren</h1>
 
     <!-- Class is signup-form omdat het dezelfde properties gebruikt als het registreer-formulier -->
-    <form class="signup-form" method="post" action="../app/src/adminDB.php">
+    <form class="register-form" method="post" action="../app/src/adminDB.php">
         <input type="text" name="productName" placeholder="Productnaam">
         <input type="text" name="category" placeholder="Categorie: Laptop etc.">
         <input type="number" name="quantity" placeholder="Hoeveelheid">
