@@ -63,7 +63,9 @@ mysqli_close($db);
             <!-- De data dient hier direct gevalideert te worden, maar hoe doen we dat? -->
             <!-- toDate - fromDate = aantal dagen. Het aantal dagen x dagprijs is totale kosten -->
 <!--            <p>U reserveert het product --><?//= $numDays  ?><!-- X dagen. De kosten komen neer op: <br><br> Dagtarief: € --><?//= $product['price']; ?><!--</p>-->
+            <p>U kunt meer info over de beschikbare producten vinden op GebruikteLaptops.nl</p>
             <p>U betaalt minimaal voor een dag. Daarnaast gelden er administratiekosten van €12,50 die eenmalig verrekend worden.</p>
+            <p>Wij zullen na uw reservering contact met u opnemen over de nota.</p>
 
         </section>
     </div>

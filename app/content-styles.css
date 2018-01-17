@@ -77,16 +77,14 @@ option {
     width: 100%;
 }
 
-#form-email {
-    width:100%
-}
+
 
 @media screen and (min-width: 850px) {
     input {
         width: 40%;
     }
     #form-email {
-        width:40%;
+        width:84%;
     }
 }
 
@@ -104,4 +102,11 @@ option {
 
 .input-error {
     box-shadow: 0 0 5px red;
+}
+
+#order-confirmation {
+
+    margin:75px;
+    padding: 10px;
+
 }

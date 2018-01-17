@@ -15,7 +15,9 @@ if (isset($_GET['lastName'])) {
         while ($row = mysqli_fetch_assoc($result)) {
             $availableOrder[] = $row;
 
-            print_r($availableOrder);
+            //print_r($availableOrder);
+
+            print_r($availableOrder[0]);
         }
 
     }
@@ -56,9 +58,10 @@ include_once "../views/header.php"; ?>
     <p>Bedankt. We hebben uw reservering ontvangen en zullen zo spoedig mogelijk contact met u opnemen.</p>
     <p>Hieronder een overzicht van uw reservering:</p>
     <br>
-    <p>Naam: <?php  $availableOrder['0']; ?> <?php $availableOrder['lastName']; ?> </p>
+    <p>Naam: <?= $availableOrder[0]['firstName']; ?> <?php echo $availableOrder[0]['lastName']; ?> </p>
 
-    <p>Reserverings ID: <?php $availableOrder['id'] ?></p>
+    <p>Wij zullen u op <?= $availableOrder[0]['email']; ?> of <?= $availableOrder[0]['phonenumber']; ?> bereiken.</p>
+    <p>Reserverings ID: <?=  $availableOrder[0]['id']; ?></p>
 </div>
 
 <?php

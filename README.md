@@ -54,8 +54,17 @@
 16 january 2018:
 - Admins can delete orders;
 - $_GET functionality is now worked out with a last name.
+- admin-panel.php line 77; $products --> $product --> edit works
+- edit-page.css created, created pretty looks :-)
+- Logout button looks a little bit better now
+- Admin page CSS overhaul, made thing look a lot better.
+
+17 january 2018:
+- Landing page works;
+- Minor CSS fixes for landing page;
+- email field is wider now;
+- Admin page table CSS fix;
+- ready for launch.
 
 What's coming:
-- Edit page for admins
-- Landing page for customers after placing their reservation
 - $_GET via unique ID, more secure
