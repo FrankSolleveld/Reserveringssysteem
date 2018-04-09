@@ -43,12 +43,15 @@ if (isset($_POST['submit'])) {
                 if ($hashedPwdCheck == false) {
 
                     // Zodra wachtwoord fout is, wordt de user naar de homepage gelinkt met de login=error code.
-                    header("Location: ../../public/index.php?login=error");
+//                    header("Location: ../../public/index.php?login=pwd");
+                    print_r ($row);
+                    print_r($hashedPwdCheck);
+
                     exit();
 
                 } elseif ($hashedPwdCheck == true) {
                     // Login user --> SESSION variable.
-                    $_SESSION['u_id']       = $row['id'];
+                    $_SESSION['u_id']       = $row['userID'];
                     $_SESSION['u_first']    = $row['first'];
                     $_SESSION['u_last']     = $row['last'];
                     $_SESSION['u_email']    = $row['email'];

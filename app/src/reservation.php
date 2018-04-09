@@ -17,12 +17,17 @@ if (isset($_POST['submit'])) {
     $phonenumber = mysqli_real_escape_string($db, $_POST['phonenumber']);
 
 
+    $_SESSION['firstName'] = $firstName;
+    print_r($product);
 
 // We geven een bericht af aan de pagina zodra er iets onjist wordt ingevoerd.
     if (empty($firstName)|| empty($lastName) || empty($email) || empty($fromDate) || empty($toDate) || empty($zip) || empty($product))  {
 
+        if (empty($firstName)){ $_SESSION['error-firstName'] = 1;  }else{ $_SESSION['error-firstName'] = 0; }
+
         header("Location: ../../public/index.php");
         ?><span class="form-error">Vul a.u.b. alle velden in!</span><?php
+
 //        print_r($firstName);
 //        print_r($_POST);
 
@@ -48,13 +53,17 @@ if (isset($_POST['submit'])) {
             } else {
 
                 // User in database zetten
-                $sql = "INSERT INTO orders (firstName, lastName, email, phonenumber, zip, product, from_date, to_date) VALUES ('$firstName', '$lastName', '$email','$phonenumber', '$zip', '$product', '$fromDate', '$toDate');";
+                $sql = "INSERT INTO reservations (firstName, lastName, email, phonenumber, zip, product, fromDate, toDate) VALUES ('$firstName', '$lastName', '$email','$phonenumber', '$zip', '$product', '$fromDate', '$toDate')";
 
                 $result = mysqli_query($db, $sql)
                 or die('Error '.mysqli_error($db).' with query '.$query);
 
                 // Met GET wordt het ID meegegeven en daarmee kan de landing page alle belangrijke informatie van de klant bevatten.
-                header("Location: confirmation.php?lastName=$lastName");
+
+                unset($_SESSION['firstName']);
+                unset($_SESSION['error-firstName']);
+
+                header("Location: ../../public/index.php");
 
             }
         }

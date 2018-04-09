@@ -2,33 +2,40 @@
 require_once '../app/src/database.php';
 
 //Pak data uit database
-// Query voor overzichtslijst
-$query = "SELECT * FROM products";
+if ($db->connect_error){
+    die("Connection failed: " . $db->connect_error);
 
-$result = mysqli_query($db, $query)
-    or die('Error: '.mysqli_error($db));
+} else {
+// Query voor overzichtslijst
+    $query = "SELECT * FROM products";
+
+    $result = mysqli_query($db, $query)
+    or die('Error: ' . mysqli_error($db));
 
 
 //Loop through the result to create a custom array
-$products = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $products[] = $row;
-}
+    $products = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $products[] = $row;
+    }
 
-// Query voor reserveringen
-$orderQuery = "SELECT * FROM orders";
+// Query voor reserveringen, hieron worden ook productnamen uit de producttabel meegenomen zodat een beheerder niet handmatig het ProductID hoeft te controleren.
+    $orderQuery = "SELECT * FROM reservations AS rv 
+                   INNER JOIN products AS pr ON rv.product = pr.productID 
+                    WHERE pr.productID = rv.product";
 
-$orderResult = mysqli_query($db, $orderQuery)
-    or die('Error: '.mysqli_error($db));
+    $orderResult = mysqli_query($db, $orderQuery)
+    or die('Error: ' . mysqli_error($db));
 
 // Array voor reserveringen
-$orders = [];
-while ($ordersRow = mysqli_fetch_assoc($orderResult)){
-    $orders[] = $ordersRow;
-}
+    $orders = [];
+    while ($ordersRow = mysqli_fetch_assoc($orderResult)) {
+        $orders[] = $ordersRow;
+    }
 
 //Close connection
-mysqli_close($db);
+    $db->close();
+}
 ?>
 <!-- CSS inladen -->
 <link rel="stylesheet" type="text/css" href="../adminpage.css"/>
@@ -70,14 +77,13 @@ mysqli_close($db);
 
         <?php foreach ($products as $product) { ?>
             <tr>
-                <td><?= $product['id']; ?></td>
-                <td><?= $product['productname']; ?></td>
+                <td><?= $product['productID']; ?></td>
+                <td><?= $product['productName']; ?></td>
                 <td><?= $product['category']; ?> </td>
                 <td><?= $product['quantity']; ?></td>
                 <td><?= $product['price'];?></td>
-                <td><a href="../app/views/edit-products.php?id=<?= $product['id']; ?>">Edit</a></td>
-                <td><a href="../app/views/delete-products.php?id=<?= $product['id']; ?>">Delete</a></td>
-                <!--<td><a href="edit.php?id=<?= $products['id']; ?>">Edit</a></td>-->
+                <td><a href="../app/views/edit-products.php?id=<?= $product['productID']; ?>">Edit</a></td>
+                <td><a href="../app/src/delete-products.php?id=<?= $product['productID']; ?>">Delete</a></td>
             </tr>
         <?php } ?>
 
@@ -91,8 +97,9 @@ mysqli_close($db);
             <thead>
             <tr>
 
+                <th>Order ID</th>
                 <th>Klantnaam</th>
-                <th>Product ID</th>
+                <th>Product</th>
                 <th>Van</th>
                 <th>Tot</th>
                 <th>E-mail</th>
@@ -106,13 +113,14 @@ mysqli_close($db);
             <?php foreach ($orders as $order) { ?>
                 <tr>
 
+                    <td><?= $order['orderID']; ?></td>
                     <td><?= $order['lastName']; ?></td>
-                    <td><?= $order['product']; ?> </td>
-                    <td><?= $order['from_date']; ?></td>
-                    <td><?= $order['to_date']; ?></td>
+                    <td><?= $order['productName']; ?> </td>
+                    <td><?= $order['fromDate']; ?></td>
+                    <td><?= $order['toDate']; ?></td>
                     <td><?= $order['email']; ?></td>
                     <td><?= $order['phonenumber']; ?></td>
-                    <td><a href="../app/views/delete-orders.php?id=<?= $order['id']; ?>">Delete</a></td>
+                    <td><a href="../app/src/delete-orders.php?id=<?= $order['orderID']; ?>">Delete</a></td>
 
                 </tr>
             <?php } ?>

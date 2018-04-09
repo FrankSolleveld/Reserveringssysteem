@@ -4,7 +4,7 @@
 
 $user       = 'root';
 $password   = 'root';
-$database   = 'producten';
+$database   = 'reservesystem';
 $host       = 'localhost';
 $port       = 8889;
 

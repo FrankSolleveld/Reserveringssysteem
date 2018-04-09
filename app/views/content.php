@@ -42,7 +42,7 @@ mysqli_close($db);
             <!-- Option wordt meer naarmate er meerdere producten komen. -->
             <?php foreach ($availableProducts as $product) {
 
-                ?> <option value="<?= $product['id'] ?>"><?= $product['productname']; ?> - <?= $product['quantity']; ?> beschikbaar - €<?= $product['price']; ?> per dag excl. administratiekosten.</option>
+                ?> <option value="<?= $product['productID'] ?>"><?= $product['productName']; ?> - <?= $product['quantity']; ?> beschikbaar - €<?= $product['price']; ?> per dag excl. administratiekosten.</option>
                 <?php
 
             } ?>
@@ -73,7 +73,7 @@ mysqli_close($db);
     <div class="rightPanel">
         <p>Vul hieronder uw gegevens in.</p>
 <!--        <form method="post" action="../app/src/reservation.php">-->
-            <input id="form-firstname" type="text" name="firstName" placeholder="Voornaam">
+            <input id="form-firstname" type="text" name="firstName" style="<?php if($_SESSION['error-firstName'] == 1){ echo "background:red;"; } ?>" value="<?php echo $_SESSION['firstName']; ?>" placeholder="Voornaam">
             <input id="form-lastname" type="text" name="lastName" placeholder="Achternaam"><br>
             <input id="form-zip" type="text" name="zip" placeholder="1234AB">
             <input id="form-housenumber" type="number" name="housenumber" placeholder="Huisnummer">

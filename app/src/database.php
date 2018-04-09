@@ -1,10 +1,12 @@
 <?php
 
+session_start();
+
 // Connectie maken met database
 
 $user       = 'root';
 $password   = 'root';
-$database   = 'producten';
+$database   = 'reservesystem';
 $host       = 'localhost';
 $port       = 8889;
 

@@ -34,6 +34,7 @@ require_once '../app/src/database.php';
 
 include '../app/views/header.php';
 
+
 if ($_SESSION['u_uid'] == 'frank') {
 
     include '../app/views/signup.php';
