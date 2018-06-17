@@ -6,15 +6,15 @@ if (isset($_POST['submit'])) {
 
     require_once 'database.php';
 
-    // Submitting user input into variables.
-    $product = mysqli_real_escape_string($db, $_POST['selected-product']);
-    $fromDate = mysqli_real_escape_string($db, $_POST['fromDate']);
-    $toDate = mysqli_real_escape_string($db, $_POST['toDate']);
-    $firstName = mysqli_real_escape_string($db, $_POST['firstName']);
-    $lastName = mysqli_real_escape_string($db, $_POST['lastName']);
-    $zip = mysqli_real_escape_string($db, $_POST['zip']);
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $phonenumber = mysqli_real_escape_string($db, $_POST['phonenumber']);
+    // Submitting user input into variables. We use MeekroDB to ensure the safety of the application so no msqli_real_escape_string is necessary.
+    $product = $_POST['selected-product'];
+    $fromDate = $_POST['fromDate'];
+    $toDate = $_POST['toDate'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $zip = $_POST['zip'];
+    $email = $_POST['email'];
+    $phonenumber = $_POST['phonenumber'];
 
 
     $_SESSION['firstName'] = $firstName;
@@ -53,10 +53,7 @@ if (isset($_POST['submit'])) {
             } else {
 
                 // User in database zetten
-                $sql = "INSERT INTO reservations (firstName, lastName, email, phonenumber, zip, product, fromDate, toDate) VALUES ('$firstName', '$lastName', '$email','$phonenumber', '$zip', '$product', '$fromDate', '$toDate')";
-
-                $result = mysqli_query($db, $sql)
-                or die('Error '.mysqli_error($db).' with query '.$query);
+                DB::query("INSERT INTO reservations (firstName, lastName, email, phonenumber, zip, product, fromDate, toDate) VALUES ('$firstName', '$lastName', '$email','$phonenumber', '$zip', '$product', '$fromDate', '$toDate')");
 
                 // Met GET wordt het ID meegegeven en daarmee kan de landing page alle belangrijke informatie van de klant bevatten.
 

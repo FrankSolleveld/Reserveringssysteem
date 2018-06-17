@@ -5,8 +5,8 @@ require_once '../app/src/database.php';
 $values = $_POST;
 
 //Haal producten op uit db
-$query = "SELECT * FROM products";
-$result = mysqli_query($db, $query);
+$result = DB::query("SELECT * FROM products");
+print_r($result);
 
 //Zet de resultaten in een array
 $availableProducts = [];

@@ -2,6 +2,10 @@
 //Require database in this file & image helpers
 require_once "../src/database.php";
 session_start();
+
+// Protection for deeplinking.
+if (isset($_SESSION['u_uid'])){
+
 //Check if Post isset, else do nothing
 if (isset($_POST['submit'])) {
     //Postback with the data showed to the user, first retrieve data from 'Super global'
@@ -146,3 +150,7 @@ include_once "footer.php";
 ?>
 </body>
 </html>
+
+<?php } else {
+    header("Location: ../../public/index.php");
+}?>
