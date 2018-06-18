@@ -25,8 +25,6 @@ require_once '../app/src/database.php';
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
 </head>
 
 <body>
@@ -37,6 +35,18 @@ include '../app/views/footer.php';
 
 ?>
 
+<script>
+    window.postcodeapi = {
+        token: '<<PLAK HIER DE WIDGET TOKEN>>',
+        fields: {
+            postcode: 'form-zip',
+            number: 'form-housenumber',
+            street: 'form-streetaddress',
+            city: 'form-city"',
+        },
+    };
+</script>
+<script src="https://cdn.postcodeapi.nu/widget-v1.1.js" async defer></script>
 </body>
 
 </html>

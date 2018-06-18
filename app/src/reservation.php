@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
                 unset($_SESSION['firstName']);
                 unset($_SESSION['error-firstName']);
 
-                header("Location: ../../public/index.php");
+                header("Location: ../../public/index.php?state=succes");
 
             }
         }

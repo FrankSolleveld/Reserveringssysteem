@@ -16,6 +16,7 @@ $result = DB::query("SELECT * FROM products");
     } );
 
 </script>
+
 <div id="viewport">
 
 <div class="mainframe">
@@ -67,11 +68,13 @@ $result = DB::query("SELECT * FROM products");
             <input id="form-lastname" type="text" name="lastName" placeholder="Achternaam"><br>
             <input id="form-zip" type="text" name="zip" placeholder="1234AB">
             <input id="form-housenumber" type="number" name="housenumber" placeholder="Huisnummer">
+            <input id="form-streetaddress" type="text" name="streetaddress" placeholder="Adres">
+            <input id="form-city" type="text" name="city" placeholder="Woonplaats">
             <input id="form-email" type="email" name="email" placeholder="info@voorbeeld.com"><br>
             <input id="form-phone" type="number" name="phonenumber" placeholder="0612345678">
 
             <input type="submit" id="form-submit" name="submit">
-
+            <span id="postcodeapi-error"></span>
             <p class="form-message"> </p>
         </form>
 
@@ -79,4 +82,3 @@ $result = DB::query("SELECT * FROM products");
 
 </div>
 </div>
-
