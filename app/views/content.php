@@ -68,8 +68,8 @@ $result = DB::query("SELECT * FROM products");
             <input id="form-lastname" type="text" name="lastName" placeholder="Achternaam"><br>
             <input id="form-zip" type="text" name="zip" placeholder="1234AB">
             <input id="form-housenumber" type="number" name="housenumber" placeholder="Huisnummer">
-            <input id="form-streetaddress" type="text" name="streetaddress" placeholder="Adres">
-            <input id="form-city" type="text" name="city" placeholder="Woonplaats">
+            <input id="form-streetaddress" type="text" name="streetaddress" placeholder="Adres" disabled>
+            <input id="form-city" type="text" name="city" placeholder="Woonplaats" disabled>
             <input id="form-email" type="email" name="email" placeholder="info@voorbeeld.com"><br>
             <input id="form-phone" type="number" name="phonenumber" placeholder="0612345678">
 
@@ -82,3 +82,53 @@ $result = DB::query("SELECT * FROM products");
 
 </div>
 </div>
+
+<script>
+    // Adding event listener for zip
+    var zip = document.getElementById('form-zip');
+    zip.addEventListener("keyup", checkData);
+
+    // Adding event listener for housenumber
+    var housenumber = document.getElementById('form-housenumber');
+    housenumber.addEventListener("keyup", checkData);
+
+    // Setting variable for timeout
+    var timeOut = setTimeout(function(){});
+
+    function checkData(){
+        // Don't start the function unless user stopped typing.
+        clearTimeout(timeOut);
+        timeOut = setTimeout(function(){
+
+            console.log(zip.value);
+
+            // Check voor lege velden.
+            if ( zip.value === "" || housenumber.value === "" ) {
+
+                console.log("De velden zijn leeg kil.");
+                return;
+
+            }
+
+            // Voer de functie uit voor het opzoeken van de stat en straatnaam.
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://api.postcodeapi.nu/v2/addresses/?postcode="+zip.value+"&number="+housenumber.value,
+                "method": "GET",
+                "headers": {
+                    "x-api-key": "wAmF6CUMWn4P1ksMkHI68asLLP4Mtv90atbAuKKx",
+                    "accept": "application/hal+json"
+                }
+            };
+
+            $.ajax(settings).done(function (response) {
+                // Response wordt opgeslagen in console.log en vervolgens wordt het in de velden geplaatst.
+                console.log(response);
+                document.getElementById('form-streetaddress').value = response._embedded.addresses[0].street;
+                document.getElementById('form-city').value = response._embedded.addresses[0].city.label;
+            });
+
+        }, 600);
+    }
+</script>

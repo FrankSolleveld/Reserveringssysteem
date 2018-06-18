@@ -34,19 +34,34 @@ include '../app/views/content.php';
 include '../app/views/footer.php';
 
 ?>
-
 <script>
-    window.postcodeapi = {
-        token: '<<PLAK HIER DE WIDGET TOKEN>>',
-        fields: {
-            postcode: 'form-zip',
-            number: 'form-housenumber',
-            street: 'form-streetaddress',
-            city: 'form-city"',
-        },
-    };
+var settings = {
+"async": true,
+"crossDomain": true,
+"url": "https://api.postcodeapi.nu/v2/addresses/?postcode=5038EA&number=19",
+"method": "GET",
+"headers": {
+"x-api-key": "wAmF6CUMWn4P1ksMkHI68asLLP4Mtv90atbAuKKx",
+"accept": "application/hal+json"
+}
+}
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+});
 </script>
-<script src="https://cdn.postcodeapi.nu/widget-v1.1.js" async defer></script>
+<!--<script>-->
+<!--    window.postcodeapi = {-->
+<!--        token: '<<PLAK HIER DE WIDGET TOKEN>>',-->
+<!--        fields: {-->
+<!--            postcode: 'form-zip',-->
+<!--            number: 'form-housenumber',-->
+<!--            street: 'form-streetaddress',-->
+<!--            city: 'form-city"',-->
+<!--        },-->
+<!--    };-->
+<!--</script>-->
+<!--<script src="https://cdn.postcodeapi.nu/widget-v1.1.js" async defer></script>-->
 </body>
 
 </html>
