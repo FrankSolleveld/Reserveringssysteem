@@ -69,6 +69,11 @@ input{
     line-height: 30px;
     margin: 8px;
     width: 70%;
+    text-decoration-color: black;
+}
+
+input[disabled] {
+    color:black;
 }
 
 option {
@@ -84,6 +89,12 @@ option {
         width: 40%;
     }
     #form-email {
+        width:84%;
+    }
+    #form-streetaddress {
+        width: 84%;
+    }
+    #form-city {
         width:84%;
     }
 }

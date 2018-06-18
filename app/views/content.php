@@ -68,7 +68,7 @@ $result = DB::query("SELECT * FROM products");
             <input id="form-lastname" type="text" name="lastName" placeholder="Achternaam"><br>
             <input id="form-zip" type="text" name="zip" placeholder="1234AB">
             <input id="form-housenumber" type="number" name="housenumber" placeholder="Huisnummer">
-            <input id="form-streetaddress" type="text" name="streetaddress" placeholder="Adres" disabled>
+            <input id="form-streetaddress" type="text" name="streetaddress" placeholder="Adres" disabled><br>
             <input id="form-city" type="text" name="city" placeholder="Woonplaats" disabled>
             <input id="form-email" type="email" name="email" placeholder="info@voorbeeld.com"><br>
             <input id="form-phone" type="number" name="phonenumber" placeholder="0612345678">
