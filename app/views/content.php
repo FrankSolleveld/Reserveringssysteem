@@ -6,16 +6,6 @@ $values = $_POST;
 
 //Haal producten op uit db
 $result = DB::query("SELECT * FROM products");
-print_r($result);
-
-//Zet de resultaten in een array
-$availableProducts = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $availableProducts[] = $row;
-}
-
-//Sluit verbinding
-mysqli_close($db);
 
 ?>
 <!-- jQuery heeft een kalender ingebouwd. Dus met deze regels code krijg ik een eigen kalender zonder dat ik dat hoef te programmeren. -->
@@ -40,7 +30,7 @@ mysqli_close($db);
             <option>Klik hier voor beschikbare producten:</option>
 
             <!-- Option wordt meer naarmate er meerdere producten komen. -->
-            <?php foreach ($availableProducts as $product) {
+            <?php foreach ($result as $product) {
 
                 ?> <option value="<?= $product['productID'] ?>"><?= $product['productName']; ?> - <?= $product['quantity']; ?> beschikbaar - €<?= $product['price']; ?> per dag excl. administratiekosten.</option>
                 <?php
